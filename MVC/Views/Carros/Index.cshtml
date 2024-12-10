@@ -1,0 +1,33 @@
+﻿@using MVC.Models.Carros
+@model CarrosModel
+
+<div class="container mt-4">
+    <div class="text-center">
+        <h3 class="mb-4">Carros</h3>
+    </div>
+    <table class="table table-striped table-bordered text-center">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var carro in Model.Carros)
+            {
+                <tr>
+                    <td>@carro.id</td>
+                    <td>@carro.Nome</td>
+                    <td>@carro.Placa</td>
+                    <td>@carro.Ano</td>
+                    <td>
+                        <a href="@Url.Action("Record", "Carros", new { id = carro.id })" class="btn btn-warning btn-sm">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
