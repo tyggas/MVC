@@ -2,10 +2,9 @@
 
 <div class="container mt-4">
     <h3 class="text-center">Editar Funcionario</h3>
-    <form asp-action="Record" method="post">
+    <form asp-action="Salvar" asp-controller="Funcionarios" method="post">
         <div class="form-group">
-            <label for="id">Código</label>
-            <input type="number" id="id" name="id" class="form-control" value="@Model.Id" readonly />
+            <input type="hidden" asp-for="Id" />
         </div>
         <div class="form-group">
             <label for="Nome">Nome</label>
@@ -13,15 +12,16 @@
         </div>
         <div class="form-group">
             <label for="Cargo">Cargo</label>
-            <input type="text" id="Placa" name="Placa" class="form-control" value="@Model.Cargo" required />
+            <input type="text" id="Cargo" name="Cargo" class="form-control" value="@Model.Cargo" required />
         </div>
         <div class="form-group">
             <label for="Salário">Salário</label>
-            <input type="number" id="Ano" name="Ano" class="form-control" value="@Model.Salário" required />
+            <input type="number" id="Salário" name="Salário" class="form-control" value="@Model.Salário" required />
         </div>
         <div class="text-center mt-4">
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="@Url.Action("Index", "Carros")" class="btn btn-secondary">Cancelar</a>
+            <a href="@Url.Action("Index", "Funcionarios")" class="btn btn-secondary">Cancelar</a>
         </div>
     </form>
 </div>
+
